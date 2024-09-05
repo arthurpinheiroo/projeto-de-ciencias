@@ -10,7 +10,7 @@ const quizData = [
     {
         question: "Qual das seguintes ações é a mais eficiente para reduzir o desperdício de água em casa?",
         a: "Lavar o carro todos os dias",
-        b: "Usar a máquina de lavar roupas com carga completa",
+        b: "Usar a máquina de lavar roupas com carga completa e apenas 1 vez na semana",
         c: "Manter a torneira aberta enquanto escova os dentes",
         d: "Deixar o chuveiro ligado enquanto se ensaboa",
         correct: "B"
@@ -92,8 +92,9 @@ const submitBtn = document.getElementById('submit');
 const resultEl = document.getElementById('result');
 const scoreEl = document.getElementById('score');
 const totalEl = document.getElementById('total');
+const scoreDisplay = document.getElementById('scoreDisplay');
 const restartBtn = document.getElementById('restart');
-const scoreDisplay = document.getElementById('scoreDisplay'); // Novo elemento para a pontuação
+const exitBtn = document.getElementById('exit-quiz');
 
 let currentQuiz = 0;
 let score = 0;
@@ -125,14 +126,14 @@ function getSelected() {
 }
 
 function updateScore() {
-    scoreDisplay.textContent = score; // Atualiza a pontuação no canto da tela
+    scoreDisplay.textContent = score; // Exibe a pontuação
 }
 
 submitBtn.addEventListener('click', () => {
     const answer = getSelected();
     if (answer) {
         if (answer === quizData[currentQuiz].correct) {
-            score += 10; // Aumenta a pontuação por resposta correta
+            score += 1; // Aumenta a pontuação por resposta correta
         }
         currentQuiz++;
         if (currentQuiz < quizData.length) {
@@ -140,8 +141,8 @@ submitBtn.addEventListener('click', () => {
         } else {
             quiz.classList.add('hide');
             resultEl.classList.remove('hide');
-            scoreEl.innerText = score;
-            totalEl.innerText = quizData.length;
+            scoreEl.innerText = `Sua pontuação: ${score}`;
+            totalEl.innerText = `Total de perguntas: ${quizData.length}`;
         }
         updateScore(); // Atualiza a pontuação após cada resposta
     }
@@ -154,4 +155,9 @@ restartBtn.addEventListener('click', () => {
     resultEl.classList.add('hide');
     loadQuiz();
     updateScore(); // Reseta a pontuação ao reiniciar o quiz
+});
+
+exitBtn.addEventListener('click', () => {
+    // Redireciona para a página inicial do quiz
+    window.location.href = 'pagina-quiz.html';
 });

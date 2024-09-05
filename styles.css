@@ -10,8 +10,8 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-   background-color: white;
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
     color: #000000;
     min-height: 100vh;
     display: flex;
@@ -20,7 +20,6 @@ body {
     align-items: center;
     padding: 20px;
     line-height: 1.6; /* Melhor legibilidade */
-    font-family: 'Poppins';
 }
 
 /* Cabeçalho */
@@ -31,41 +30,28 @@ header {
     border-radius: 15px;
     margin-bottom: 30px;
     animation: fadeIn 1s ease-in-out;
-    position: absolute;
-    top: 2%;
-    left: 10px;
-    
+    position: relative; /* Alterado de absolute para relative */
 }
-
 
 header h1 {
     font-size: 2.5em; /* Tamanho ajustado para melhor hierarquia */
     color: green;
-    position: absolute;
-    top: 200%;
-    left: 15%;
     margin-bottom: 10px;
     font-weight: bold;
 }
 
 header p {
     font-size: 1.2em; /* Leve aumento no tamanho da fonte */
-    width: 550px;
-    position: absolute;
-    top: 270%;
-    left: 12%;
-    font-size: 30px;
-    color: inherit;
+    width: 100%;
+    max-width: 800px; /* Máximo de largura para melhor leitura */
+    margin: 0 auto;
 }
 
 header .p2 {
-position: absolute;
-top: 490%;
-left: 12%;
-font-size: 18px;
+    font-size: 18px;
+    margin-top: 10px;
 }
 
-/* Menu de navegação */
 /* Menu de navegação */
 nav ul {
     list-style: none;
@@ -73,6 +59,7 @@ nav ul {
     justify-content: center;
     padding: 0;
     margin-bottom: 30px;
+    flex-wrap: wrap; /* Para se ajustar a telas menores */
 }
 
 nav ul li {
@@ -98,14 +85,12 @@ nav ul li a:hover {
     color: #000; /* Melhor contraste no hover */
 }
 
-
-
-
 /* Seção de dicas */
 main {
-    max-width: 800px;
+    max-width: 100%;
     width: 100%;
     margin: 0 auto;
+    padding: 20px;
 }
 
 #tip-generator {
@@ -114,13 +99,8 @@ main {
     border-radius: 20px;
     margin-bottom: 40px;
     animation: fadeIn 1.5s ease-in-out;
-    position: absolute;
-    top: 94%;
-    left: 25%;
     font-size: 24px;
-    width: 500px;
     color: rgb(0, 0, 0);
-    
 }
 
 #generate-tip {
@@ -135,9 +115,6 @@ main {
     box-shadow: 0 4px 12px rgba(0, 198, 255, 0.2);
     outline: none;
     margin-top: 20px;
-    font-family: 'Poppins';
-
-
 }
 
 #generate-tip:hover {
@@ -165,30 +142,6 @@ main {
     backdrop-filter: blur(6px);
     margin-top: 40px;
     animation: fadeIn 2s ease-in-out;
-    position: absolute;
-    top: 100%;
-    left: -1%;
-}
-
-#about h2 {
-    font-size: 2.2em; /* Tamanho ajustado para melhor hierarquia */
-    color: inherit;
-    margin-bottom: 15px;
-}
-
-#about p {
-    font-size: 1.2em; /* Leve aumento no tamanho da fonte */
-    color: inherit;
-}
-
-#coisas-pg {
-    position: absolute;
-    top: 80%;
-    
-}
-
-#coisas-pg p {
-    width: 500px;
 }
 
 /* Seção Contatos */
@@ -199,13 +152,11 @@ main {
     padding: 30px;
     text-align: center;
     backdrop-filter: blur(6px);
-    position: absolute;
-    top: 190%;
-    left: 23%;
     margin-top: 40px;
     animation: fadeIn 2s ease-in-out;
-    width: 1000px;
-    height: 400px;
+    width: 100%;
+    max-width: 1000px; /* Máximo de largura para melhor leitura */
+    height: auto;
 }
 
 #contact h2 {
@@ -214,68 +165,10 @@ main {
     margin-bottom: 15px;
 }
 
-#contact #altina {
-    position: absolute;
-    left: 5%;
-    top: 13%;
-    color: white;
-    font-family: 'Poppins';
-}
-
 #contact p {
     font-size: 1.2em; /* Leve aumento no tamanho da fonte */
     color: inherit;
     margin-bottom: 15px;
-}
-
-#contact ul {
-    list-style: none;
-    padding: 0;
-}
-
-#contact ul li {
-    font-size: 1.1em; /* Ajustado para melhor legibilidade */
-    margin-bottom: 10px;
-}
-
-#contact a {
-    color: #00c6ff;
-    text-decoration: none;
-}
-
-#contact a:hover {
-    text-decoration: underline;
-}
-
-#scroll-to-contact {
-    background: linear-gradient(40deg, #ffffff, #00ff0d); /* Gradiente sutil */
-    color: #ffffff;
-    border: none;
-    padding: 12px 25px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 30px;
-    transition: background 0.3s ease, transform 0.1s ease;
-    box-shadow: 0 4px 12px rgba(0, 198, 255, 0.2);
-    outline: none;
-    margin-top: 20px;
-}
-
-#scroll-to-contact:hover {
-    background: linear-gradient(135deg, #ffffff, #81c784);
-    transform: scale(1.02);
-    box-shadow: 0 6px 16px rgba(0, 198, 255, 0.3);
-}
-
-#scroll-to-contact:active {
-    transform: scale(0.98);
-}
-
-footer {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 14px;
-    color: #ffffff;
 }
 
 /* Animação de fade-in */
@@ -292,11 +185,9 @@ footer {
 
 /* Imagem com Animação */
 .img1 > img {
-    z-index: -1;
-    width: 1000px;
-    position: absolute;
-    left: 45%;
-    top: 25%;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
     opacity: 0.7;
     animation: slideIn 1s ease-out, fadeIn 1s ease-out;
 }
@@ -323,148 +214,103 @@ footer {
     }
 }
 
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
 
-.tex-1, .tex-2, .tex-3 {
-    position: absolute;
-    top: 155%;
-    width: 500px;
-    height: 300px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona a sombra */
-    border-radius: 10px; /* Arredonda as bordas */
-    transition: transform 0.3s ease; /* Adiciona uma transição suave ao redimensionamento */
+    header h1 {
+        font-size: 2em;
+        margin-bottom: 5px;
+    }
+
+    header p {
+        font-size: 1em;
+        width: 90%;
+        max-width: none;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+    }
+
+    #tip-generator {
+        font-size: 18px;
+        width: 90%;
+        max-width: none;
+    }
+
+    #generate-tip {
+        font-size: 18px;
+        padding: 15px 20px;
+    }
+
+    #contact {
+        width: 90%;
+        max-width: none;
+        padding: 20px;
+    }
+
+    .tex-1, .tex-2, .tex-3 {
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+        height: auto;
+        box-shadow: none; /* Removido para telas pequenas */
+        transform: scale(1); /* Removido o efeito de escala */
+    }
+
+    .logo-png, .logo-h1 {
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+
+    .logo-png img, .logo-h1 img {
+        width: 60px;
+    }
+
+    .entrar-registrar {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        left: auto;
+    }
+
+    .Entrar, .registrar {
+        margin: 10px 0;
+    }
+
+    .img1, .img2, .img-mundo {
+        width: 100%;
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+
+    .container1, .container2 {
+        width: 90%;
+        max-width: none;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .tex-1, .tex-2, .tex-3 {
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+
+    .estufah1 {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-top: 20px;
+    }
 }
-
-.tex-1 {
-    left: 3%;
-}
-
-.tex-2 {
-    left: 690px;
-}
-
-.tex-3 {
-    left: 72%;
-}
-
-/* Animação ao passar o mouse */
-.tex-1:hover, .tex-2:hover, .tex-3:hover {
-    transform: scale(1.1); /* Aumenta o tamanho para 110% quando o mouse estiver sobre a div */
-}
-
-.logo-png {
-    position: absolute;
-    list-style: none;
-    top: 1%;
-    left: 4%;
-    cursor: pointer;
-}
-
-.logo-png img {
-    width: 90px;
-    cursor: pointer;
-}
-
-.logo-h1 {
-    position: absolute;
-    top: 4%;
-    left: 9%;
-    cursor: pointer;
-}
-
-.entrar-registrar {
-    display: flex;
-    position: absolute;
-    left: 80%;
-}
-
-.Entrar {
-    margin-inline: 30px;
-}
-
-#Entrar {
-    border: none;
-    background-color: #000000; 
-    color: white; 
-    border-radius: 10px;
-    padding: 0.5rem;
-    width: 100px;
-    cursor: pointer;
-    transition: 0.5s ease-in-out; 
-}
-
-#Entrar:hover {
-    background-color: #2b2e2c; 
-    color: #ffffff; 
-}
-
-#Registrar {
-    border: none;
-    background-color: rgb(0, 0, 0);
-    color: white;
-    border-radius: 10px;
-    padding: 0.5rem;
-    width: 100px;
-    cursor: pointer;
-    transition: 0.5s ease-in-out;
-}
-
-#Registrar:hover {
-    background-color:  #2b2e2c; 
-    color: #ffffff; 
-}
-
-.menu-car img{
-    width: 14px;
-    background-color: rgba(255, 255, 255, 0.3);
-    position: absolute;
-    top: 7-px;
-    left: 30%;
-}
-
-.estufah1 {
-    position: absolute;
-    top: 250%;
-    left: 23%;
-}
-
-.estufah1 h1 {
-    color: green;
-}
-
-.container1 {
-    position: absolute;
-    top: 260%;
-    left: 23%;
-    width: 450px;
-    border: 3px solid #acadad; /* Adiciona uma borda sólida de 3px branca */
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.container2 {
-    position: absolute;
-    top: 285%;
-    left: 23%;
-    width: 450px;
-    border: 3px solid #acadad; /* Adiciona uma borda sólida de 3px branca */
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.img-mundo {
-    position: absolute;
-    top: 250%;
-    left: 50%;
-}
-
-.img-mundo img {
-    width: 600px;
-}
-
-.img2 {
-    position: absolute;
-    top: 90%;
-    left: 55%;
-    width: 500px;
-}
-
